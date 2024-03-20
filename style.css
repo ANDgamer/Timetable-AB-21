@@ -96,7 +96,7 @@ header img {
 
 
 footer {
-    height: 70px;
+    height: 60px;
     width: 100%;
     background-color: var(--bg-2-color);
     bottom: 0;
@@ -112,7 +112,7 @@ footer div {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 footer div.active {
