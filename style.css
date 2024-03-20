@@ -42,8 +42,8 @@ body {
 
 header {
     height: 20px;
-    width: calc(100% - 60px);
-    padding: 20px 30px;
+    width: calc(100% - 40px);
+    padding: 15px 20px;
     background-color: var(--bg-2-color);
     display: flex;
     justify-content: space-between;
@@ -51,13 +51,14 @@ header {
 }
 
 header h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: 400;
     color: var(--main-active-color);
 }
 
 header img {
-    height: 36px;
+    height: 30px;
+    cursor: pointer;
 }
 
 /* ------------------------ Content -------------------- */
@@ -70,30 +71,32 @@ header img {
 }
 
 .Content .Date{
-    height: 36px;
+    height: 30px;
     width: 50%;
-    margin: 10px auto;
+    margin: 8px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     background-color: var(--bg-2-color);
-    border-radius: 18px;
+    border-radius: 15px;
 }
 
 .Content .LessonsContainer {
     width: 100%;
-    height: calc(100vh - 60px - 56px - 70px);
+    height: calc(100vh - 50px - 46px - 60px);
     overflow-y: scroll;
 }
+
+/* ------------------------ Lessons -------------------- */
 
 .Lesson {
     height: 10000px;
 }
 
 
-/* ------------------------ Footer -------------------- */
 
+/* ------------------------ Footer -------------------- */
 
 footer {
     height: 60px;
@@ -113,10 +116,23 @@ footer div {
     justify-content: center;
     align-items: center;
     font-size: 1.1em;
+    cursor: pointer;
 }
 
 footer div.active {
+    position: relative;
     color: var(--main-active-color);
     background: var(--main-active-color);
     background: linear-gradient(180deg, var(--main-gradient-color) 0%, var(--bg-2-color) 100%);
+}
+
+footer div.active::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: var(--main-active-color);
 }
