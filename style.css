@@ -41,9 +41,9 @@ body {
 /* ------------------------ Header -------------------- */
 
 header {
-    height: 70px;
-    width: calc(100% - 120px);
-    padding: 45px 60px;
+    height: 20px;
+    width: calc(100% - 60px);
+    padding: 20px 30px;
     background-color: var(--bg-2-color);
     display: flex;
     justify-content: space-between;
@@ -51,9 +51,13 @@ header {
 }
 
 header h1 {
-    font-size: 3.5em;
+    font-size: 1.5em;
     font-weight: 400;
     color: var(--main-active-color);
+}
+
+header img {
+    height: 36px;
 }
 
 /* ------------------------ Content -------------------- */
@@ -66,20 +70,20 @@ header h1 {
 }
 
 .Content .Date{
-    height: 90px;
+    height: 36px;
     width: 50%;
-    margin: 30px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 1.3em;
     background-color: var(--bg-2-color);
-    border-radius: 45px;
+    border-radius: 18px;
 }
 
 .Content .LessonsContainer {
     width: 100%;
-    height: calc(100vh - 160px - 180px - 150px);
+    height: calc(100vh - 60px - 56px - 70px);
     overflow-y: scroll;
 }
 
@@ -92,7 +96,7 @@ header h1 {
 
 
 footer {
-    height: 180px;
+    height: 70px;
     width: 100%;
     background-color: var(--bg-2-color);
     bottom: 0;
@@ -108,7 +112,7 @@ footer div {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 1.2em;
 }
 
 footer div.active {
