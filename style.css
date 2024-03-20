@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar {
-	width: 0;
+	width: 5px;
 	border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
@@ -17,16 +17,20 @@
 }
 
 *,
-body,
 *:after,
 *:before {
 	padding: 0;
 	margin: 0;
 	-webkit-tap-highlight-color: #00000000;
+    box-sizing: border-box;
 }
 
-html, 
+html {
+    height: 100vh;
+}
+
 body {
+    height: 100vh;
     margin: 0;
 	padding: 0;
     background-color: var(--bg-1-color);
@@ -34,16 +38,18 @@ body {
     font-family: "Ubuntu", sans-serif;
     font-style: normal;
     font-weight: 400;
-    overflow: hidden;
     user-select: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------ Header -------------------- */
 
 header {
-    height: 30px;
-    width: calc(100% - 40px);
-    padding: 15px 20px;
+    height: 56px;
+    width: 100%;
+    padding: 0 20px;
     background-color: var(--bg-2-color);
     display: flex;
     justify-content: space-between;
@@ -68,16 +74,20 @@ header img#ReloadIcon {
 /* ------------------------ Content -------------------- */
 
 .Content {
-    width: 100%;
-    height: calc(100vh - 160px - 180px);
     margin: 0;
     padding: 0;
+    width: 100%;
+    padding: 0 20px;
+    overflow: auto;
+    flex: 1;
 }
 
-.Content .Date{
+.Date{
+    position: sticky;
+    top: 0;
+    margin: 8px auto;
     height: 30px;
     width: 50%;
-    margin: 8px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,16 +96,14 @@ header img#ReloadIcon {
     border-radius: 15px;
 }
 
-.Content .LessonsContainer {
-    width: 100%;
-    height: calc(100vh - 50px - 46px - 60px);
-    overflow-y: scroll;
+.LessonsContainer {
+    /* width: 100%; */
 }
 
 /* ------------------------ Lessons -------------------- */
 
 .Lesson {
-    height: 10000px;
+    /* height: 10000px; */
 }
 
 
@@ -106,15 +114,13 @@ footer {
     height: 60px;
     width: 100%;
     background-color: var(--bg-2-color);
-    bottom: 0;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 footer div {
-    width: calc(100% / 5);
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: center;
