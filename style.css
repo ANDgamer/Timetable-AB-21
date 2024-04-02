@@ -86,14 +86,19 @@ header img#ReloadIcon {
     position: sticky;
     top: 0;
     margin: 8px auto;
-    height: 30px;
+    height: 34px;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
     background-color: var(--bg-2-color);
-    border-radius: 15px;
+    border-radius: 17px;
+}
+
+.Date.scrolled {
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
 }
 
 .LessonsContainer {
