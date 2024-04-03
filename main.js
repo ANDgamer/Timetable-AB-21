@@ -1,11 +1,11 @@
-const currentDate = document.getElementById('Date');
-const content = document.getElementById('Content');
+const days = document.querySelectorAll('.day');
 
-function trackScroll() {
-  var scrolledPixels = content.scrollTop;
+function trackScroll(event) {
+  var scrolledPixels = event.target.scrollTop;
+  const currentDate = event.target.querySelector('.Date');
   if (scrolledPixels >= 8) {
     if(!currentDate.classList.contains('scrolled')){
-      currentDate.classList.add("scrolled");
+      currentDate.classList.add('scrolled');
     }
   }
   else {
@@ -13,11 +13,14 @@ function trackScroll() {
       currentDate.classList.remove('scrolled');
     }
   }
-  var topPosition = content.scrollTop;
+  var topPosition = container.scrollTop;
+  // console.log(scrolledPixels);
 }
 
 // Виклик функції при прокручуванні сторінки
-content.addEventListener('scroll', trackScroll);
+days.forEach(element => {
+  element.addEventListener('scroll', trackScroll);
+});
 
 // Swiper js
 const arr = ["ПН", "ВТ", "СР", "ЧТ", "ПТ"]; 
