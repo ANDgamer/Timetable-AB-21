@@ -1,6 +1,7 @@
 :root{
-    --main-active-color: #93baf1;
-    --main-non-active-color: #4B5360;
+    --swiper-pagination-bottom: 0;
+    --main-active-color-1: #93baf1;
+    --main-active-color-2: #4B5360;
     --main-gradient-color: #93baf180;
     --bg-1-color: #313131;
     --bg-2-color: #3B3B3B;
@@ -9,12 +10,14 @@
 }
 
 ::-webkit-scrollbar {
+    display: none;
 	width: 5px;
 	border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
+    display: none;
 	border-radius: 5px;
-	background-color: var(--text-color-1) ;
+	background-color: var(--text-color-1);
 }
 
 *,
@@ -71,7 +74,7 @@ header {
 header h1 {
     font-size: 1.4em;
     font-weight: 400;
-    color: var(--main-active-color);
+    color: var(--main-active-color-1);
 }
 
 header img {
@@ -96,7 +99,6 @@ header img#ReloadIcon {
     padding: 0;
     width: 100%;
     padding: 0 15px 0 15px;
-    overflow: auto;
     flex: 1;
 }
 
@@ -117,7 +119,7 @@ header img#ReloadIcon {
 .Date.scrolled {
    border-top-left-radius: 0;
    border-top-right-radius: 0;
-   border: 2px solid var(--main-active-color);
+   border: 2px solid var(--main-active-color-1);
    border-top: 0;
 }
 
@@ -131,7 +133,7 @@ header img#ReloadIcon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--main-active-color);
+    background-color: var(--main-active-color-1);
     padding: 0 10px;
 }
 
@@ -173,11 +175,8 @@ header img#ReloadIcon {
 }
 
 .day {
-    display: none;
-}
-
-.day.active {
-    display: block;
+    overflow-y: scroll;
+    height: calc(100% - 60px);
 }
 
 /* ------------------------ Grids -------------------- */
@@ -240,7 +239,7 @@ header img#ReloadIcon {
 
 /* ------------------------ Footer -------------------- */
 
-footer {
+.swiper-pagination {
     height: 60px;
     width: 100%;
     background-color: var(--bg-2-color);
@@ -249,7 +248,7 @@ footer {
     justify-content: space-around;
 }
 
-footer div {
+.swiper-pagination div {
     width: 20%;
     height: 100%;
     display: flex;
@@ -259,14 +258,14 @@ footer div {
     cursor: pointer;
 }
 
-footer div.active {
+.swiper-pagination div.active {
     position: relative;
-    color: var(--main-active-color);
-    background: var(--main-active-color);
+    color: var(--main-active-color-1);
+    background: var(--main-gradient-color);
     background: linear-gradient(180deg, var(--main-gradient-color) 0%, var(--bg-2-color) 100%);
 }
 
-footer div.active::before {
+.swiper-pagination div.active::before {
     position: absolute;
     content: "";
     top: 0;
@@ -274,5 +273,5 @@ footer div.active::before {
     height: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: var(--main-active-color);
+    background-color: var(--main-active-color-1);
 }

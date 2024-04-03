@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -18,181 +18,186 @@
         <button id="ReloadIcon" onClick="window.location.reload()">
     </header>
     
-    <div class="Content" id="Content">
-        <div class="Date" id="Date">12.03.2024</div>
-        <div class="Container">
-            <div id="monday" class="day">
-                <div class="lesson lesson-1">
-                    <div class="lessonHeader">
-                        <p>3 пара</p>
-                        <p>11:40 - 13:00</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Моделювання об'єктів керування</div>
-                            <span>
-                                Ділай І. В.<br>
-                                Лабораторна
-                            </span>
-                            <span>402 XXVIII н.к.</span>
+    <div class="Content swiper mySwiper" id="Content">
+        <!-- <div class="swiper mySwiper"> -->
+        <div class="Container  swiper-wrapper">
+            <div id="monday" class="day swiper-slide">
+                    <div class="Date" id="Date">12.03.2024</div>
+                    <div class="lesson lesson-1">
+                        <div class="lessonHeader">
+                            <p>3 пара</p>
+                            <p>11:40 - 13:00</p>
                         </div>
-                        <div class="section section-2">
-                            <div class="wrapper">Моделювання об'єктів керування</div>
-                            <span>
-                                Онисик С. Б.<br>
-                                Лабораторна
-                            </span>
-                            <span>403 XXVIII н.к.</span>
-                        </div>
-                        <div class="section section-3">
-                            <div class="wrapper">Системи і мережі передавання даних</div>
-                            <span>
-                                Сапелюк Р. В.<br>
-                                Лабораторна
-                            </span>
-                            <span>086 X н.к.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lesson lesson-2">
-                    <div class="lessonHeader">
-                        <p>4 пара</p>
-                        <p>13:15 - 14:35</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1"></div>
-                        <div class="section section-2">
-                            <div class="wrapper">Технологічні вимірювання та прилади</div>
-                            <span>
-                                Масняк О. Я.<br>
-                                Лабораторна
-                            </span>
-                            <span>071 X н.к.</span>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Моделювання об'єктів керування</div>
+                                <span>
+                                    Ділай І. В.<br>
+                                    Лабораторна
+                                </span>
+                                <span>402 XXVIII н.к.</span>
+                            </div>
+                            <div class="section section-2">
+                                <div class="wrapper">Моделювання об'єктів керування</div>
+                                <span>
+                                    Онисик С. Б.<br>
+                                    Лабораторна
+                                </span>
+                                <span>403 XXVIII н.к.</span>
+                            </div>
+                            <div class="section section-3">
+                                <div class="wrapper">Системи і мережі передавання даних</div>
+                                <span>
+                                    Сапелюк Р. В.<br>
+                                    Лабораторна
+                                </span>
+                                <span>086 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="lesson lesson-2">
+                        <div class="lessonHeader">
+                            <p>4 пара</p>
+                            <p>13:15 - 14:35</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1"></div>
+                            <div class="section section-2">
+                                <div class="wrapper">Технологічні вимірювання та прилади</div>
+                                <span>
+                                    Масняк О. Я.<br>
+                                    Лабораторна
+                                </span>
+                                <span>071 X н.к.</span>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <div id="tuesday" class="day">
-                <div class="lesson lesson-1">
-                    <div class="lessonHeader">
-                        <p>1 пара</p>
-                        <p>8:30 - 9:50</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Моделювання об'єктів керування</div>
-                            <span>
-                                Онисик С. Б.<br>
-                                Практична
-                            </span>
-                            <span>111 VI н.к.</span>
+            <div id="tuesday" class="day swiper-slide">
+                    <div class="Date" id="Date">12.03.2024</div>
+                    <div class="lesson lesson-1">
+                        <div class="lessonHeader">
+                            <p>1 пара</p>
+                            <p>8:30 - 9:50</p>
                         </div>
-                        <div class="section section-2"></div>
-                    </div>
-                </div>
-                <div class="lesson lesson-2">
-                    <div class="lessonHeader">
-                        <p>2 пара</p>
-                        <p>10:05 - 11:25</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1"></div>
-                        <div class="section section-2">
-                            <div class="wrapper">Мікропроцесорна техніка</div>
-                            <span>
-                                Лесовой Л. В.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Моделювання об'єктів керування</div>
+                                <span>
+                                    Онисик С. Б.<br>
+                                    Практична
+                                </span>
+                                <span>111 VI н.к.</span>
+                            </div>
+                            <div class="section section-2"></div>
                         </div>
                     </div>
-                </div>
+                    <div class="lesson lesson-2">
+                        <div class="lessonHeader">
+                            <p>2 пара</p>
+                            <p>10:05 - 11:25</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1"></div>
+                            <div class="section section-2">
+                                <div class="wrapper">Мікропроцесорна техніка</div>
+                                <span>
+                                    Лесовой Л. В.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <div id="wednesday" class="day">
-                <div class="lesson lesson-1">
-                    <div class="lessonHeader">
-                        <p>1 пара</p>
-                        <p>8:30 - 9:50</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Технологічні вимірювання та прилади</div>
-                            <span>
-                                Кріль Б. А.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+            <div id="wednesday" class="day swiper-slide">
+                    <div class="Date" id="Date">12.03.2024</div>
+                    <div class="lesson lesson-1">
+                        <div class="lessonHeader">
+                            <p>1 пара</p>
+                            <p>8:30 - 9:50</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Технологічні вимірювання та прилади</div>
+                                <span>
+                                    Кріль Б. А.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="lesson lesson-2">
-                    <div class="lessonHeader">
-                        <p>2 пара</p>
-                        <p>10:05 - 11:25</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Мікропроцесорна техніка</div>
-                            <span>
-                                Лесовой Л. В.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+                    <div class="lesson lesson-2">
+                        <div class="lessonHeader">
+                            <p>2 пара</p>
+                            <p>10:05 - 11:25</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Мікропроцесорна техніка</div>
+                                <span>
+                                    Лесовой Л. В.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
-            <div id="thursday" class="day">
-                <div class="lesson lesson-1">
-                    <div class="lessonHeader">
-                        <p>1 пара</p>
-                        <p>8:30 - 9:50</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Системи і мережі передавання даних</div>
-                            <span>
-                                Матіко Ф. Д.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+            <div id="thursday" class="day swiper-slide">
+                    <div class="Date" id="Date">12.03.2024</div>
+                    <div class="lesson lesson-1">
+                        <div class="lessonHeader">
+                            <p>1 пара</p>
+                            <p>8:30 - 9:50</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Системи і мережі передавання даних</div>
+                                <span>
+                                    Матіко Ф. Д.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="lesson lesson-2">
-                    <div class="lessonHeader">
-                        <p>2 пара</p>
-                        <p>10:05 - 11:25</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Технологічні вимірювання та прилади</div>
-                            <span>
-                                Кріль Б. А.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+                    <div class="lesson lesson-2">
+                        <div class="lessonHeader">
+                            <p>2 пара</p>
+                            <p>10:05 - 11:25</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Технологічні вимірювання та прилади</div>
+                                <span>
+                                    Кріль Б. А.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="lesson lesson-3">
-                    <div class="lessonHeader">
-                        <p>3 пара</p>
-                        <p>11:40 - 13:00</p>
-                    </div>
-                    <div class="sectionContainer">
-                        <div class="section section-1">
-                            <div class="wrapper">Моделювання об'єктів керування</div>
-                            <span>
-                                Онисик С. Б.<br>
-                                Лекція
-                            </span>
-                            <span>051 X н.к.</span>
+                    <div class="lesson lesson-3">
+                        <div class="lessonHeader">
+                            <p>3 пара</p>
+                            <p>11:40 - 13:00</p>
+                        </div>
+                        <div class="sectionContainer">
+                            <div class="section section-1">
+                                <div class="wrapper">Моделювання об'єктів керування</div>
+                                <span>
+                                    Онисик С. Б.<br>
+                                    Лекція
+                                </span>
+                                <span>051 X н.к.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
-            <div id="friday" class="day active">
+            <div id="friday" class="day swiper-slide">
+                <div class="Date" id="Date">12.03.2024</div>
                 <div class="lesson lesson-1">
                     <div class="lessonHeader">
                         <p>1 пара</p>
@@ -266,16 +271,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="lesson lesson-4">
+                    <div class="lessonHeader">
+                        <p>4 пара</p>
+                        <p>13:15 - 14:35</p>
+                    </div>
+                    <div class="sectionContainer">
+                        <div class="section section-1">
+                            <div class="wrapper">Теорія інформації</div>
+                            <span>
+                                Фединець В. О.<br>
+                                Практична
+                            </span>
+                            <span>210 Гол. н.к.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="footer swiper-pagination">
+            <div id="mondayBtn" class="active">ПН</div>
+            <div id="tuesdayBtn" class="">ВТ</div>
+            <div id="wednesdayBtn" class="">СР</div>
+            <div id="thursdayBtn" class="">ЧТ</div>
+            <div id="fridayBtn" class="">ПТ</div>
+        </div>
+        <!-- </div> -->
     </div>
 
-    <footer>
-        <div id="mondayBtn" class="active">ПН</div>
-        <div id="tuesdayBtn" class="">ВТ</div>
-        <div id="wednesdayBtn" class="">СР</div>
-        <div id="thursdayBtn" class="">ЧТ</div>
-        <div id="fridayBtn" class="">ПТ</div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -18,3 +18,19 @@ function trackScroll() {
 
 // Виклик функції при прокручуванні сторінки
 content.addEventListener('scroll', trackScroll);
+
+// Swiper js
+const arr = ["ПН", "ВТ", "СР", "ЧТ", "ПТ"]; 
+
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 15,
+  pagination: {
+    el: ".swiper-pagination",
+    bulletClass: "bullet",
+    bulletActiveClass: "active",
+    clickable: true,
+    renderBullet: function (index, className) { 
+      return '<div class="' + className + '">' + arr[index] + "</div>"; 
+    }, 
+  },
+});
