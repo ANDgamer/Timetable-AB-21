@@ -127,40 +127,41 @@ header img#ReloadIcon {
     width: 100%;
     height: 30px;
     color: var(--text-color-2);
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--main-active-color);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     padding: 0 10px;
 }
 
 .sectionContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px 150px;
+    grid-template-rows: 1fr 1fr;
     gap: 5px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .lesson {
     margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .lesson .section {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    padding: 10px 5px;
+    gap: 8px;
+    line-height: 1.2em;
 }
 
 .lesson .section .wrapper {
-    font-size: 0.95em;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -171,34 +172,70 @@ header img#ReloadIcon {
     background-color: var(--bg-2-color);
 }
 
+.day {
+    display: none;
+}
+
+.day.active {
+    display: block;
+}
+
 /* ------------------------ Grids -------------------- */
 
 /* Monday */
-.monday .lesson-1 .section-1{
-    grid-column: 1/1;
-    grid-row: 1/1;
+
+#monday .lesson-2 .sectionContainer {
+    grid-template-rows: 1fr;
 }
 
-.monday .lesson-1 .section-2{
-    grid-column: 2/2;
-    grid-row: 1/1;
+#monday .lesson-1 .section-3 {
+    grid-column: 1/3;
 }
 
-.monday .lesson-1 .section-3{
-    grid-column: 1/1;
-    grid-row: 2/2;
-    border-bottom-left-radius: 10px;
+/* Thursday */
+
+#tuesday .lesson .section-1,
+#tuesday .lesson .section-2 {
+    grid-column: 1/3;
 }
 
-.monday .lesson-1 .section-4{
-    grid-column: 2/2;
-    grid-row: 2/2;
-    border-bottom-right-radius: 10px;
+/* #tuesday .lesson-1 .sectionContainer {
+    grid-template-rows: 1fr 0.8fr;
 }
 
+#tuesday .lesson-2 .sectionContainer {
+    grid-template-rows: 0.9fr 1fr;
+} */
 
-.monday .lesson-2 {
-    
+/* Wednesday */
+
+#wednesday .lesson .sectionContainer {
+    grid-template-rows: 1fr;
+}
+
+#wednesday .lesson .section-1 {
+    grid-column: 1/3;
+}
+
+/* Thursday */
+
+#thursday .lesson .sectionContainer {
+    grid-template-rows: 1fr;
+}
+
+#thursday .lesson .section {
+    grid-column: 1/3;
+}
+
+/* Friday */
+
+#friday .lesson .sectionContainer {
+    grid-template-rows: 1fr;
+}
+
+#friday .lesson-3 .section-1,
+#friday .lesson-4 .section-1 {
+    grid-column: 1/3;
 }
 
 /* ------------------------ Footer -------------------- */
