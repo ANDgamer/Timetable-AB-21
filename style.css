@@ -163,8 +163,12 @@ header img#ReloadIcon {
 }
 
 .lesson .section .wrapper {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 600;
+}
+
+.lesson .section span:last-child {
+    font-size: 1em;
 }
 
 .section-1, 
