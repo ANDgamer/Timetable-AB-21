@@ -77,19 +77,61 @@ header h1 {
     color: var(--main-active-color-1);
 }
 
-header img {
-    height: 30px;
+header button {
     cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header button {
+header button::before,
+header button::after {
+    transition: 0.05s ease-in-out;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+header button::before {
+    opacity: 0.2;
+    width: 0;
+    height: 0;
+}
+
+header button::after {
+    transition: 0;
+    width: 20px;
+    height: 20px;
+}
+
+header button:active::before,
+header button:active::after {
+    background-color: var(--text-color-1);
+    opacity: 0.5;
+}
+
+header button:active::before {
+    width: 40px;
+    height: 40px;
+}
+
+header button:active::after {
+    width: 20px;
+    height: 20px;
+}
+
+#paintIcon {
+    background-image: url(images/paint_2.svg);
+    height: 30px;
+    width: 30px;
+}
+
+#reloadIcon {
     background-image: url(images/reload_2.svg);
     height: 34px;
     width: 34px;
-}
-
-header img#ReloadIcon {
-    height: 34px;
 }
 
 /* ------------------------ Content -------------------- */
@@ -159,11 +201,11 @@ header img#ReloadIcon {
     font-size: 0.8em;
     padding: 10px 5px;
     gap: 8px;
-    line-height: 1.2em;
+    line-height: 1.1em;
 }
 
 .lesson .section .wrapper {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
