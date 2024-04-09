@@ -48,57 +48,15 @@ body {
     flex-direction: column;
 }
 
-/* ------------------------ Button effects -------------------- */
-
 button {
-    cursor: pointer;
-    color: inherit;
     background: none;
     background-repeat:no-repeat;
-    background-position: center;
-    background-size: contain;
+	color: inherit;
 	border: none;
 	padding: 0;
 	font: inherit;
+	cursor: pointer;
 	outline: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button::before,
-button::after {
-    transition: 0.05s ease-in-out;
-    position: absolute;
-    content: "";
-    border-radius: 50%;
-}
-
-button::before {
-    opacity: 0.2;
-    width: 0;
-    height: 0;
-}
-
-button::after {
-    width: 20px;
-    height: 20px;
-}
-
-button:active::before,
-button:active::after {
-    background-color: var(--text-color-1);
-    opacity: 0.2;
-}
-
-button:active::before {
-    width: 40px;
-    height: 40px;
-}
-
-button:active::after {
-    width: 20px;
-    height: 20px;
 }
 
 /* ------------------------ Header -------------------- */
@@ -117,6 +75,50 @@ header h1 {
     font-size: 1.4em;
     font-weight: 400;
     color: var(--main-active-color-1);
+}
+
+header button {
+    cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header button::before,
+header button::after {
+    transition: 0.05s ease-out;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+header button::before {
+    opacity: 0.2;
+    width: 0;
+    height: 0;
+}
+
+header button::after {
+    width: 20px;
+    height: 20px;
+}
+
+header button:active::before,
+header button:active::after {
+    background-color: var(--text-color-1);
+    opacity: 0.2;
+}
+
+header button:active::before {
+    width: 40px;
+    height: 40px;
+}
+
+header button:active::after {
+    width: 20px;
+    height: 20px;
 }
 
 #paintIcon {
@@ -207,7 +209,7 @@ header h1 {
 }
 
 .lesson .section span:last-child {
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .section-1, 
@@ -220,6 +222,27 @@ header h1 {
 .day {
     overflow-y: scroll;
     height: calc(100% - 60px);
+}
+
+#monday .lesson-2 .section-2, 
+#wednesday .lesson .section, 
+#thursday .lesson .section, 
+#friday .lesson-1 .section-1,
+#friday .lesson-2 .section, 
+#friday .lesson-3 .section, 
+#friday .lesson-4 .section {
+   background-color: var(--main-active-color-2);
+}
+
+body.num #monday .lesson-1 .section-1,
+body.num #monday .lesson-1 .section-2,
+body.num #tuesday .lesson-1 .section-1 {
+   background-color: var(--main-active-color-2);
+}
+
+body.den #monday .lesson-1 .section-3, 
+body.den #tuesday .lesson-2 .section-2 {
+   background-color: var(--main-active-color-2);
 }
 
 /* ------------------------ Grids -------------------- */
