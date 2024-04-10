@@ -151,7 +151,7 @@ header button:active::after {
     flex: 1;
 }
 
-.Date{
+.date{
     position: sticky;
     top: 0;
     margin: 8px auto;
@@ -165,7 +165,7 @@ header button:active::after {
     border-radius: 17px;
 }
 
-.Date.scrolled {
+.date.scrolled {
    border-top-left-radius: 0;
    border-top-right-radius: 0;
    border: 2px solid var(--main-active-color-1);
@@ -362,4 +362,16 @@ body.den #tuesday .lesson-2 .section-2 a {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--main-active-color-1);
+}
+
+@media (min-width: 1440px) {
+    .day {
+        overflow: visible;
+        height: 100%;
+    }
+    
+    #container {
+        overflow: hidden;
+        overflow-y: scroll;
+    }
 }

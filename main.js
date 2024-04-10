@@ -69,5 +69,57 @@ var swiper = new Swiper(".mySwiper", {
       return '<div class="' + className + '">' + arr[index] + "</div>"; 
     }, 
   },
-  initialSlide: getCurrentDayOfWeek()
+  initialSlide: getCurrentDayOfWeek(),
+  breakpoints: {
+    // when window width is >= 320px
+    1440: {
+      slidesPerView: 5,
+      pagination: {
+        enabled: false,
+      }
+    }
+  }
 });
+
+//----------------------------------------------------------------------
+const dates = document.querySelectorAll('.date')
+
+// function getDateFromDayOfYear(dayOfYear) {
+//   const months = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+//   var currentDate = new Date(new Date().getFullYear(), 0); // Початок року
+//   var resultDate = new Date(currentDate.setDate(dayOfYear)); // Встановлюємо день у році
+  
+//   var day = resultDate.getDate();
+//   var month = resultDate.getMonth();
+  
+//   return day + " " + months[month];
+// }
+
+// var currentDate = new Date();
+// var dayOfYear = Math.floor((currentDate - new Date(currentDate.getFullYear(), 0, 0)) / 86400000);
+// var dayOfWeek = currentDate.getDay();
+
+// for (let i = 0; i < 5; i++) {
+//   dates[i].innerHTML = getDateFromDayOfYear(dayOfYear - dayOfWeek + i + 1)
+// }
+
+//----------------------------------------------------------------------
+
+// Отримати поточну дату
+const today = new Date();
+today.setDate(13);
+// Отримати день тижня
+const dayOfWeek = today.getDay();
+// Отримати номер дня в місяці
+const dayOfMonth = today.getDate();
+// Розрахувати номер понеділка
+const monday = dayOfMonth - dayOfWeek + 1;
+// Розрахувати номер п'ятниці
+const friday = monday + 4;
+// Отримати назву місяця
+const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+const monthName = monthNames[today.getMonth()];
+// Заповнити масив числами місяця
+for (let i = monday; i <= friday; i++) {  
+dates[i - monday].innerHTML = i + " " + monthName.charAt(0).toUpperCase() + monthName.slice(1);
+}
