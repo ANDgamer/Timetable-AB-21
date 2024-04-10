@@ -59,6 +59,14 @@ button {
 	outline: inherit;
 }
 
+a {
+    color: var(--text-color-1);
+    background-color: var(--main-active-color-2);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
 /* ------------------------ Header -------------------- */
 
 header {
@@ -191,6 +199,10 @@ header button:active::after {
     overflow: hidden;
 }
 
+.lesson:last-child {
+    margin-bottom: 0;
+}
+
 .lesson .section {
     display: flex;
     align-items: center;
@@ -234,6 +246,11 @@ header button:active::after {
    background-color: var(--main-active-color-2);
 }
 
+#wednesday .lesson-2 .section-1 a {
+    color: var(--text-color-2);
+    background-color: var(--main-active-color-1);
+}
+
 body.num #monday .lesson-1 .section-1,
 body.num #monday .lesson-1 .section-2,
 body.num #tuesday .lesson-1 .section-1 {
@@ -243,6 +260,11 @@ body.num #tuesday .lesson-1 .section-1 {
 body.den #monday .lesson-1 .section-3, 
 body.den #tuesday .lesson-2 .section-2 {
    background-color: var(--main-active-color-2);
+}
+
+body.den #tuesday .lesson-2 .section-2 a {
+    color: var(--text-color-2);
+    background-color: var(--main-active-color-1);
 }
 
 /* ------------------------ Grids -------------------- */
