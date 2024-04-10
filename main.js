@@ -3,7 +3,7 @@ const days = document.querySelectorAll('.day');
 
 function trackScroll(event) {
   var scrolledPixels = event.target.scrollTop;
-  const currentDate = event.target.querySelector('.Date');
+  const currentDate = event.target.querySelector('.date');
   if (scrolledPixels >= 8) {
     if(!currentDate.classList.contains('scrolled')){
       currentDate.classList.add('scrolled');

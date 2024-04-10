@@ -199,10 +199,6 @@ header button:active::after {
     overflow: hidden;
 }
 
-.lesson:last-child {
-    margin-bottom: 0;
-}
-
 .lesson .section {
     display: flex;
     align-items: center;
