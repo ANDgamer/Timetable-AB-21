@@ -25,8 +25,9 @@ days.forEach(element => {
 const body = document.body;
 function getCurrentWeekNumber() {
   var currentDate = new Date();
-  var baseDate = new Date(2024, 1, 12);
+  var baseDate = new Date(2024, 1, 10);
   var diffMilliseconds = currentDate - baseDate;
+  //console.log(`${currentDate} - ${baseDate} = ${diffMilliseconds}`);
   var oneWeekMilliseconds = 7 * 24 * 60 * 60 * 1000;
   var weekNumber = Math.floor(diffMilliseconds / oneWeekMilliseconds) + 1;
   return weekNumber;
@@ -107,7 +108,7 @@ const dates = document.querySelectorAll('.date')
 
 // Отримати поточну дату
 const today = new Date();
-today.setDate(13);
+//today.setDate(14);
 // Отримати день тижня
 const dayOfWeek = today.getDay();
 // Отримати номер дня в місяці
