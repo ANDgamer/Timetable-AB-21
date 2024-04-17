@@ -107,9 +107,12 @@ dates[i - monday].innerHTML = i + " " + monthName.charAt(0).toUpperCase() + mont
 
 // підсвічування поточного дня
 // dates[dayOfWeek - 1].classList.add('active');
+const content = document.getElementById('content');
 const dayBtns = document.querySelectorAll('.dayBtn');
 
-dayBtns[dayOfWeek - 1].classList.add('current')
+if (!content.classList.contains('swiper-pagination-disabled')) {
+  dayBtns[dayOfWeek - 1].classList.add('current')
+}
 
 // Вікно контакту з розробниками
 const contactPage = document.getElementById('contactPage');

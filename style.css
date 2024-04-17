@@ -400,24 +400,24 @@ body.den #tuesday .lesson-2 .section-2 a {
     height: 50%;
     background-color: var(--bg-1-color);
     border-radius: 20px;
-    padding: 5%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     /* gap: 5%; */
 }
 
 #contactPage__main a {
-    margin-top: 2%;
-    margin-bottom: 5%;
+    margin-top: 10px;
+    margin-bottom: 15px;
     cursor: auto;
 }
 
 #closeIcon {
     background-image: url(images/close.svg);
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     margin-left: auto;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
 }
 
 @media (min-width: 1440px) {
