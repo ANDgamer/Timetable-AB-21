@@ -13,14 +13,14 @@
 </head>
 <body>
     <header>
-        <button id="paintIcon" onClick=""></button>
+        <button id="paintIcon" onClick="changePageStatus(1)"></button>
         <!-- <h2 id="realTime"></h2> -->
         <h1>AB-21</h1>
         <button id="reloadIcon" onClick="window.location.reload()"></button>
     </header>
     
-    <div class="Content swiper mySwiper" id="Content">
-        <div class="Container  swiper-wrapper" id="container">
+    <div class="swiper mySwiper" id="content">
+        <div class="swiper-wrapper" id="container">
             <div id="monday" class="day swiper-slide">
                     <div class="date">1</div>
                     <div class="lesson lesson-1">
@@ -276,6 +276,17 @@
             </div>
         </div>
         <div id="footer" class="footer swiper-pagination"></div>
+    </div>
+
+    <div id="contactPage">
+        <div id="contactPage__bg" onClick="changePageStatus(0)"></div>
+        <div id="contactPage__main">
+            <button id="closeIcon" onClick="changePageStatus(0)"></button>
+            Зв'язатися з розробником: <br>
+            <a href="mailto: andrii.chernysh.av.2022@lpnu.ua">andrii.chernysh.av.2022@lpnu.ua</a>
+            Донат розробнику: <br>
+            <a href="https://send.monobank.ua/jar/4hDfdXWjAj">Посилання на банку</a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

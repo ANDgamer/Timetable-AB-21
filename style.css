@@ -89,7 +89,7 @@ header h1 {
     color: var(--main-active-color-1);
 }
 
-header button {
+button {
     cursor: pointer;
     background-position: center;
     background-size: contain;
@@ -134,7 +134,8 @@ header button:active::after {
 }
 
 #paintIcon {
-    background-image: url(images/paint_2.svg);
+    /* background-image: url(images/paint_2.svg); */
+    background-image: url(images/contact_us.svg);
     height: 30px;
     width: 30px;
 }
@@ -147,12 +148,13 @@ header button:active::after {
 
 /* ------------------------ Content -------------------- */
 
-.Content {
+#content {
     margin: 0;
     padding: 0;
     width: 100%;
     padding: 0 15px 0 15px;
     flex: 1;
+    z-index: 1;
 }
 
 .date{
@@ -172,15 +174,8 @@ header button:active::after {
 .date.scrolled {
    border-top-left-radius: 0;
    border-top-right-radius: 0;
-   border: 2px solid var(--main-active-color-1);
+   border: 2px solid var(--bg-1-color);
    border-top: 0;
-}
-
-.date.active {
-    /* background-color: var(--main-active-color-2); */
-    /* color: var(--main-active-color-1); */
-    border: 2px dashed var(--main-active-color-1);
-    /* box-shadow: 0 0 4px var(--main-active-color-2); */
 }
 
 /* ------------------------ Container -------------------- */
@@ -355,7 +350,7 @@ body.den #tuesday .lesson-2 .section-2 a {
 
 .swiper-pagination div.active {
     position: relative;
-    color: var(--main-active-color-1);
+    /* color: var(--main-active-color-1); */
     background: var(--main-gradient-color);
     background: linear-gradient(180deg, var(--main-gradient-color) 0%, var(--bg-2-color) 100%);
 }
@@ -369,6 +364,60 @@ body.den #tuesday .lesson-2 .section-2 a {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--main-active-color-1);
+}
+
+.swiper-pagination div.current {
+    color: var(--main-active-color-1);
+}
+
+/* ------------------------ contactPage -------------------- */
+
+#contactPage {
+    visibility: hidden;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#contactPage__bg {
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px) contrast(80%);
+}
+
+#contactPage__main {
+    z-index: 4;
+    position: fixed;
+    cursor: auto;
+    width: 80%;
+    height: 50%;
+    background-color: var(--bg-1-color);
+    border-radius: 20px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 5%; */
+}
+
+#contactPage__main a {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    cursor: auto;
+}
+
+#closeIcon {
+    background-image: url(images/close.svg);
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    margin-bottom: 5%;
 }
 
 @media (min-width: 1440px) {

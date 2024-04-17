@@ -106,23 +106,19 @@ dates[i - monday].innerHTML = i + " " + monthName.charAt(0).toUpperCase() + mont
 }
 
 // підсвічування поточного дня
-dates[dayOfWeek - 1].classList.add('active');
+// dates[dayOfWeek - 1].classList.add('active');
+const dayBtns = document.querySelectorAll('.dayBtn');
 
+dayBtns[dayOfWeek - 1].classList.add('current')
 
+// Вікно контакту з розробниками
+const contactPage = document.getElementById('contactPage');
 
-
-
-
-const currentDate = new Date();
-
-// Отримуємо день і місяць
-const monthIndex = currentDate.getMonth();
-
-// Створюємо рядок з датою у відповідному форматі
-const dateString = dayOfMonth + " " + monthNames[monthIndex];
-
-// Знаходимо тег <p> з ідентифікатором "realTime"
-const realTimeParagraph = document.getElementById("realTime");
-
-// Записуємо отриману дату в елемент <p>
-realTimeParagraph.textContent = dateString;
+function changePageStatus(setStatus) {
+  if (setStatus == 1) {
+    contactPage.style.visibility='visible';
+  }
+  else {
+    contactPage.style.visibility='hidden';
+  }
+}
