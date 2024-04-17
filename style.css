@@ -79,6 +79,10 @@ header {
     align-items: center;
 }
 
+header h2 {
+    font-weight: 400;
+}
+
 header h1 {
     font-size: 1.4em;
     font-weight: 400;
@@ -170,6 +174,13 @@ header button:active::after {
    border-top-right-radius: 0;
    border: 2px solid var(--main-active-color-1);
    border-top: 0;
+}
+
+.date.active {
+    /* background-color: var(--main-active-color-2); */
+    /* color: var(--main-active-color-1); */
+    border: 2px dashed var(--main-active-color-1);
+    /* box-shadow: 0 0 4px var(--main-active-color-2); */
 }
 
 /* ------------------------ Container -------------------- */

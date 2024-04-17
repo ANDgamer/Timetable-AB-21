@@ -21,6 +21,9 @@ days.forEach(element => {
   element.addEventListener('scroll', trackScroll);
 });
 
+// Отримати назву місяця
+const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+
 // Заміна чисельника або знаменника
 const body = document.body;
 function getCurrentWeekNumber() {
@@ -84,28 +87,6 @@ var swiper = new Swiper(".mySwiper", {
 
 //----------------------------------------------------------------------
 const dates = document.querySelectorAll('.date')
-
-// function getDateFromDayOfYear(dayOfYear) {
-//   const months = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
-//   var currentDate = new Date(new Date().getFullYear(), 0); // Початок року
-//   var resultDate = new Date(currentDate.setDate(dayOfYear)); // Встановлюємо день у році
-  
-//   var day = resultDate.getDate();
-//   var month = resultDate.getMonth();
-  
-//   return day + " " + months[month];
-// }
-
-// var currentDate = new Date();
-// var dayOfYear = Math.floor((currentDate - new Date(currentDate.getFullYear(), 0, 0)) / 86400000);
-// var dayOfWeek = currentDate.getDay();
-
-// for (let i = 0; i < 5; i++) {
-//   dates[i].innerHTML = getDateFromDayOfYear(dayOfYear - dayOfWeek + i + 1)
-// }
-
-//----------------------------------------------------------------------
-
 // Отримати поточну дату
 const today = new Date();
 //today.setDate(14);
@@ -117,10 +98,31 @@ const dayOfMonth = today.getDate();
 const monday = dayOfMonth - dayOfWeek + 1;
 // Розрахувати номер п'ятниці
 const friday = monday + 4;
-// Отримати назву місяця
-const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+
 const monthName = monthNames[today.getMonth()];
 // Заповнити масив числами місяця
 for (let i = monday; i <= friday; i++) {  
 dates[i - monday].innerHTML = i + " " + monthName.charAt(0).toUpperCase() + monthName.slice(1);
 }
+
+// підсвічування поточного дня
+dates[dayOfWeek - 1].classList.add('active');
+
+
+
+
+
+
+const currentDate = new Date();
+
+// Отримуємо день і місяць
+const monthIndex = currentDate.getMonth();
+
+// Створюємо рядок з датою у відповідному форматі
+const dateString = dayOfMonth + " " + monthNames[monthIndex];
+
+// Знаходимо тег <p> з ідентифікатором "realTime"
+const realTimeParagraph = document.getElementById("realTime");
+
+// Записуємо отриману дату в елемент <p>
+realTimeParagraph.textContent = dateString;
