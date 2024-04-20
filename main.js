@@ -28,7 +28,7 @@ const monthNames = ["січня", "лютого", "березня", "квітн�
 const body = document.body;
 function getCurrentWeekNumber() {
   var currentDate = new Date();
-  var baseDate = new Date(2024, 1, 10);
+  var baseDate = new Date(2024, 1, 11);
   var diffMilliseconds = currentDate - baseDate;
   //console.log(`${currentDate} - ${baseDate} = ${diffMilliseconds}`);
   var oneWeekMilliseconds = 7 * 24 * 60 * 60 * 1000;
@@ -53,8 +53,12 @@ function getCurrentDayOfWeek() {
   var currentDate = new Date();
   var dayOfWeek = currentDate.getDay();
   if (dayOfWeek === 0) {
-    return 6; // Понеділок
-  } else {
+    return dayOfWeek;
+  }
+  else if (dayOfWeek === 6) {
+    return 4;
+  }
+  else {
     return dayOfWeek - 1;
   }
 }
@@ -89,7 +93,7 @@ var swiper = new Swiper(".mySwiper", {
 const dates = document.querySelectorAll('.date')
 // Отримати поточну дату
 const today = new Date();
-//today.setDate(14);
+//today.setDate(21);
 // Отримати день тижня
 const dayOfWeek = today.getDay();
 // Отримати номер дня в місяці
