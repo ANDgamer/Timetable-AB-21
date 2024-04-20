@@ -119,13 +119,12 @@ if (!content.classList.contains('swiper-pagination-disabled')) {
 }
 
 // Вікно контакту з розробниками
-const contactPage = document.getElementById('contactPage');
-
 function changePageStatus(setStatus) {
+  let contactPage = document.getElementById('contactPage');
   if (setStatus == 1) {
     contactPage.style.visibility='visible';
   }
-  else {
+  else if (setStatus == 0) {
     contactPage.style.visibility='hidden';
   }
 }
