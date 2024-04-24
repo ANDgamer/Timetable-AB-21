@@ -128,3 +128,10 @@ function changePageStatus(setStatus) {
     contactPage.style.visibility='hidden';
   }
 }
+
+function copy(copyValue) {
+  navigator.clipboard.writeText(copyValue);
+
+  // Alert the copied text
+  // alert("Copied the text");
+}

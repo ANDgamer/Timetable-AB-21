@@ -98,37 +98,37 @@ button {
     align-items: center;
 }
 
-header button::before,
-header button::after {
+button::before,
+button::after {
     transition: 0.05s ease-out;
     position: absolute;
     content: "";
     border-radius: 50%;
 }
 
-header button::before {
+button::before {
     opacity: 0.2;
     width: 0;
     height: 0;
 }
 
-header button::after {
+button::after {
     width: 20px;
     height: 20px;
 }
 
-header button:active::before,
-header button:active::after {
+button:active::before,
+button:active::after {
     background-color: var(--text-color-1);
     opacity: 0.2;
 }
 
-header button:active::before {
+button:active::before {
     width: 40px;
     height: 40px;
 }
 
-header button:active::after {
+button:active::after {
     width: 20px;
     height: 20px;
 }
@@ -396,28 +396,48 @@ body.den #tuesday .lesson-2 .section-2 a {
     z-index: 4;
     position: fixed;
     cursor: auto;
-    width: 80%;
-    height: 50%;
+    width: fit-content;
+    height: fit-content;
     background-color: var(--bg-1-color);
     border-radius: 20px;
     padding: 30px;
+    padding-top: 55px;
+    /* padding-right: 50px; */
     display: flex;
     flex-direction: column;
-    /* gap: 5%; */
+    justify-content: center;
+    align-items: center;
 }
 
-#contactPage__main a {
+#contactPage__main span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-top: 10px;
     margin-bottom: 15px;
-    cursor: auto;
+}
+
+#contactPage__main a:last-child {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: fit-content;
 }
 
 #closeIcon {
     background-image: url(images/close.svg);
     height: 25px;
     width: 25px;
-    margin-left: auto;
-    /* margin-bottom: 5%; */
+    margin: 20px;
+    position: absolute;    
+    top: 0;
+    right: 0;
+}
+
+#copyEmailIconIcon {
+    background-image: url(images/copyIcon.svg);
+    height: 25px;
+    width: 25px;
 }
 
 @media (min-width: 1440px) {
