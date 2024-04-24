@@ -434,7 +434,7 @@ body.den #tuesday .lesson-2 .section-2 a {
     right: 0;
 }
 
-#copyEmailIconIcon {
+.copyIcon {
     background-image: url(images/copyIcon.svg);
     height: 25px;
     width: 25px;
