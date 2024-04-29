@@ -90,27 +90,25 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 //----------------------------------------------------------------------
-const dates = document.querySelectorAll('.date')
+const dates = document.querySelectorAll('.date');
 // Отримати поточну дату
 const today = new Date();
-//today.setDate(21);
-// Отримати день тижня
+// Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
 const dayOfWeek = today.getDay();
-// Отримати номер дня в місяці
+// Отримати номер поточного дня в місяці
 const dayOfMonth = today.getDate();
-// Розрахувати номер понеділка
-const monday = dayOfMonth - dayOfWeek + 1;
-// Розрахувати номер п'ятниці
+// Розрахувати номер понеділка цього тижня
+const monday = dayOfMonth - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
+// Розрахувати номер п'ятниці цього тижня
 const friday = monday + 4;
 
-const monthName = monthNames[today.getMonth()];
 // Заповнити масив числами місяця
-for (let i = monday; i <= friday; i++) {  
-dates[i - monday].innerHTML = i + " " + monthName.charAt(0).toUpperCase() + monthName.slice(1);
+for (let i = 0; i < dates.length; i++) {
+  const date = new Date(today.getFullYear(), today.getMonth(), monday + i);
+  dates[i].innerHTML = date.getDate() + " " + monthNames[date.getMonth()];
 }
 
 // підсвічування поточного дня
-// dates[dayOfWeek - 1].classList.add('active');
 const content = document.getElementById('content');
 const dayBtns = document.querySelectorAll('.dayBtn');
 
