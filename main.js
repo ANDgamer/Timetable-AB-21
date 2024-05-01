@@ -63,33 +63,6 @@ function getCurrentDayOfWeek() {
   }
 }
 
-// Swiper js
-const arr = ["ПН", "ВТ", "СР", "ЧТ", "ПТ"]; 
-
-var swiper = new Swiper(".mySwiper", {
-  spaceBetween: 15,
-  pagination: {
-    el: ".swiper-pagination",
-    bulletClass: "dayBtn",
-    bulletActiveClass: "active",
-    clickable: true,
-    renderBullet: function (index, className) { 
-      return '<div class="' + className + '">' + arr[index] + "</div>"; 
-    }, 
-  },
-  initialSlide: getCurrentDayOfWeek(),
-  breakpoints: {
-    // when window width is >= 320px
-    1440: {
-      slidesPerView: 5,
-      pagination: {
-        enabled: false,
-      }
-    }
-  }
-});
-
-//----------------------------------------------------------------------
 const dates = document.querySelectorAll('.date');
 // Отримати поточну дату
 const today = new Date();
@@ -108,16 +81,51 @@ for (let i = 0; i < dates.length; i++) {
   dates[i].innerHTML = date.getDate() + " " + monthNames[date.getMonth()];
 }
 
+// Swiper js
+const arr = ["ПН", "ВТ", "СР", "ЧТ", "ПТ"]; 
+
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 15,
+  pagination: {
+    el: ".swiper-pagination",
+    bulletClass: "dayBtn",
+    bulletActiveClass: "active",
+    clickable: true,
+    renderBullet: function (index, className) { 
+      return '<div class="' + className + '">' + arr[index] + "</div>"; 
+    }, 
+  },
+  initialSlide: getCurrentDayOfWeek(),
+  breakpoints: {
+    1440: {
+      slidesPerView: 5,
+      // pagination: {
+      //   enabled: false,
+      // }
+    }
+  }
+});
+
 // підсвічування поточного дня
-const content = document.getElementById('content');
-const dayBtns = document.querySelectorAll('.dayBtn');
-
-if (!content.classList.contains('swiper-pagination-disabled')) {
-  dayBtns[dayOfWeek - 1].classList.add('current')
+function setCurrentdayOfWeek() {
+  setTimeout(function() {
+    const content = document.getElementById('content');
+    const dayBtns = document.querySelectorAll('.dayBtn');
+    if (window.innerWidth < 1440) {
+      dayBtns[dayOfWeek - 1].classList.add('current');
+    }
+  }, 10); // Затримка в мілісекундах
 }
+setCurrentdayOfWeek();
 
+window.addEventListener('resize', function() {
+  swiper.activeIndex = getCurrentDayOfWeek();
+  setCurrentdayOfWeek();
+});
+
+//----------------------------------------------------------------------
 // Вікно контакту з розробниками
-function changePageStatus(setStatus) {
+function changeContactPageStatus(setStatus) {
   let contactPage = document.getElementById('contactPage');
   if (setStatus == 1) {
     contactPage.style.visibility='visible';
