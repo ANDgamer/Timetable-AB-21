@@ -450,4 +450,7 @@ body.den #tuesday .lesson-2 .section-2 a {
         overflow: hidden;
         overflow-y: scroll;
     }
+    #footer {
+        display: none;
+    }
 }
