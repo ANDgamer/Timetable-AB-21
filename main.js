@@ -48,10 +48,25 @@ if (isEven(getCurrentWeekNumber())) {
   body.classList.add('num');
 }
 
+const dates = document.querySelectorAll('.date');
+// Отримати поточну дату
+const today = new Date();
+// const today = new Date(2024, 4, 6);
+// Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
+const dayOfWeek = today.getDay();
+// Отримати номер поточного дня в місяці
+const dayOfMonth = today.getDate();
+// Розрахувати номер понеділка цього тижня
+const monday = dayOfMonth - dayOfWeek + 1;
+
+// Заповнити масив числами місяця
+for (let i = 0; i < dates.length; i++) {
+  const date = new Date(today.getFullYear(), today.getMonth(), monday + i);
+  dates[i].innerHTML = date.getDate() + " " + monthNames[date.getMonth()];
+}
+
 //Встановлення поточного дня тижня
 function getCurrentDayOfWeek() {
-  var currentDate = new Date();
-  var dayOfWeek = currentDate.getDay();
   if (dayOfWeek === 0) {
     return dayOfWeek;
   }
@@ -61,24 +76,6 @@ function getCurrentDayOfWeek() {
   else {
     return dayOfWeek - 1;
   }
-}
-
-const dates = document.querySelectorAll('.date');
-// Отримати поточну дату
-const today = new Date();
-// Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
-const dayOfWeek = today.getDay();
-// Отримати номер поточного дня в місяці
-const dayOfMonth = today.getDate();
-// Розрахувати номер понеділка цього тижня
-const monday = dayOfMonth - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
-// Розрахувати номер п'ятниці цього тижня
-const friday = monday + 4;
-
-// Заповнити масив числами місяця
-for (let i = 0; i < dates.length; i++) {
-  const date = new Date(today.getFullYear(), today.getMonth(), monday + i);
-  dates[i].innerHTML = date.getDate() + " " + monthNames[date.getMonth()];
 }
 
 // Swiper js
@@ -108,6 +105,7 @@ var swiper = new Swiper(".mySwiper", {
 
 // підсвічування поточного дня
 function setCurrentdayOfWeek() {
+  swiper.activeIndex = getCurrentDayOfWeek();
   setTimeout(function() {
     const content = document.getElementById('content');
     const dayBtns = document.querySelectorAll('.dayBtn');
@@ -118,10 +116,7 @@ function setCurrentdayOfWeek() {
 }
 setCurrentdayOfWeek();
 
-window.addEventListener('resize', function() {
-  swiper.activeIndex = getCurrentDayOfWeek();
-  setCurrentdayOfWeek();
-});
+window.addEventListener('resize', setCurrentdayOfWeek);
 
 //----------------------------------------------------------------------
 // Вікно контакту з розробниками
