@@ -24,12 +24,14 @@ days.forEach(element => {
 // Отримати назву місяця
 const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
 
+const currentDateValue = new Date();
+// const currentDateValue = new Date(2024, 4, 11);
+
 // Заміна чисельника або знаменника
 const body = document.body;
 function getCurrentWeekNumber() {
-  var currentDate = new Date();
   var baseDate = new Date(2024, 1, 10);
-  var diffMilliseconds = currentDate - baseDate;
+  var diffMilliseconds = currentDateValue - baseDate;
   //console.log(`${currentDate} - ${baseDate} = ${diffMilliseconds}`);
   var oneWeekMilliseconds = 7 * 24 * 60 * 60 * 1000;
   var weekNumber = Math.floor(diffMilliseconds / oneWeekMilliseconds) + 1;
@@ -50,18 +52,18 @@ if (isEven(getCurrentWeekNumber())) {
 
 const dates = document.querySelectorAll('.date');
 // Отримати поточну дату
-const today = new Date();
+// const currentDate = new Date();
 // const today = new Date(2024, 4, 11);
 // Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
-const dayOfWeek = today.getDay();
+const dayOfWeek = currentDateValue.getDay();
 // Отримати номер поточного дня в місяці
-const dayOfMonth = today.getDate();
+const dayOfMonth = currentDateValue.getDate();
 // Розрахувати номер понеділка цього тижня
 const monday = dayOfMonth - dayOfWeek + 1;
 
 // Заповнити масив числами місяця
 for (let i = 0; i < dates.length; i++) {
-  const date = new Date(today.getFullYear(), today.getMonth(), monday + i);
+  const date = new Date(currentDateValue.getFullYear(), currentDateValue.getMonth(), monday + i);
   dates[i].innerHTML = date.getDate() + " " + monthNames[date.getMonth()];
 }
 
