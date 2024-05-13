@@ -28,7 +28,7 @@ const monthNames = ["січня", "лютого", "березня", "квітн�
 const body = document.body;
 function getCurrentWeekNumber() {
   var currentDate = new Date();
-  var baseDate = new Date(2024, 1, 11);
+  var baseDate = new Date(2024, 1, 10);
   var diffMilliseconds = currentDate - baseDate;
   //console.log(`${currentDate} - ${baseDate} = ${diffMilliseconds}`);
   var oneWeekMilliseconds = 7 * 24 * 60 * 60 * 1000;
@@ -51,7 +51,7 @@ if (isEven(getCurrentWeekNumber())) {
 const dates = document.querySelectorAll('.date');
 // Отримати поточну дату
 const today = new Date();
-// const today = new Date(2024, 4, 6);
+// const today = new Date(2024, 4, 11);
 // Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
 const dayOfWeek = today.getDay();
 // Отримати номер поточного дня в місяці
