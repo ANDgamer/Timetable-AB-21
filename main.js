@@ -51,9 +51,6 @@ if (isEven(getCurrentWeekNumber())) {
 }
 
 const dates = document.querySelectorAll('.date');
-// Отримати поточну дату
-// const currentDate = new Date();
-// const today = new Date(2024, 4, 11);
 // Отримати номер дня тижня (неділя - 0, понеділок - 1, ..., субота - 6)
 const dayOfWeek = currentDateValue.getDay();
 // Отримати номер поточного дня в місяці
@@ -106,6 +103,8 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // підсвічування поточного дня
+dates[dayOfWeek - 1].classList.add('current')
+
 function setCurrentdayOfWeek() {
   swiper.activeIndex = getCurrentDayOfWeek();
   setTimeout(function() {
@@ -119,7 +118,6 @@ function setCurrentdayOfWeek() {
 setCurrentdayOfWeek();
 
 window.addEventListener('resize', setCurrentdayOfWeek);
-
 //----------------------------------------------------------------------
 // Вікно контакту з розробниками
 function changeContactPageStatus(setStatus) {

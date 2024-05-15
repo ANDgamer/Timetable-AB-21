@@ -445,11 +445,17 @@ body.den #tuesday .lesson-2 .section-2 a {
         overflow: visible;
         height: 100%;
     }
+
+    .date.current {
+        background-color: var(--main-active-color-1);
+        color: var(--bg-1-color);
+    }
     
     #container {
         overflow: hidden;
         overflow-y: scroll;
     }
+
     #footer {
         /* display: none; */
         visibility: hidden;
